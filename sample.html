@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEJ0K+PDtV1pJ3W2D27RzozFqpTUz5Rzp0K6J8aVqvqK3Yh8kXz44Vmlw+g/7" crossorigin="anonymous">
+    <title>Hostel Life - Satya Sai Shiksha Sadan</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            overflow-x: hidden;
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header img {
+            height: 60px;
+            width: auto;
+        }
+
+        #quote {
+            font-size: 1.2rem;
+            font-style: italic;
+            text-align: center;
+            color: white;
+            flex-grow: 1;
+            margin-left: 20px;
+        }
+
+        /* Navigation */
+        #nav ul {
+            list-style-type: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        #nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            padding: 10px;
+            display: block;
+            transition: color 0.3s ease;
+        }
+
+        #nav ul li a:hover {
+            color: #f7f7f7;
+        }
+
+        /* Cover Page */
+        .cover-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background-image: url('h.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            filter: brightness(0.5);
+        }
+
+        .cover-container h1 {
+            font-size: 4rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            animation: fadeInText 2s ease-out;
+        }
+
+        @keyframes fadeInText {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Section Styling */
+        .section-title {
+            font-size: 2.5rem;
+            color: black;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .content-section {
+            background-color:white;
+            padding: 40px 20px;
+            color: black;
+        }
+
+        .content-section p {
+            font-size: 1.2rem;
+            text-align: center;
+            margin-top: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .gallery img {
+            width: 32%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .hostel-title {
+            text-align: center;
+            color: white;
+            font-size: 2rem;
+            margin-top: 20px;
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            background-color: white;
+            border-radius: 8px;
+            margin: 10px 0;
+            overflow: hidden;
+        }
+
+        .faq-item button {
+            width: 100%;
+            background-color: rgb(171, 159, 159);
+            color: black;
+            padding: 15px;
+            font-size: 1.1rem;
+            text-align: left;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .faq-item button:hover {
+            background-color: rgb(53, 53, 63);
+        }
+
+        .faq-item div {
+            padding: 15px;
+            display: none;
+            background-color:white;
+            border-radius: 8px;
+        }
+
+        .faq-item.active div {
+            display: block;
+        }
+
+        /* Testimonial Section */
+        .testimonial-container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color:white;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .testimonial-container h3 {
+            font-size: 2.5rem;
+            color: #fff;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        .testimonial {
+            display: none;
+            font-size: 1.5rem;
+            color: #ccc;
+            font-style: italic;
+            line-height: 1.5;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .testimonial.active {
+            display: block;
+        }
+
+        .testimonial-nav button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 25px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        .testimonial-nav button:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .testimonial-img {
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            margin-top: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .cover-container h1 {
+                font-size: 2.5rem;
+            }
+
+            .testimonial-container h3 {
+                font-size: 2rem;
+            }
+
+            .gallery img {
+                width: 48%;
+            }
+
+            .content-section p {
+                font-size: 1rem;
+            }
+
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            #nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <a href="Home.html"><img src="download.jpg" alt="Satya Sai Shiksha Sadan logo"></a>
+        <p id="quote">All action results from thought, so it is thoughts that matter. - Sai Baba</p>
+
+        <div id="nav">
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+                <li><a href="Admission.html">Admission</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Cover Page -->
+    <div class="cover-container">
+        <h1>Welcome to Hostel Life</h1>
+    </div>
+
+    <!-- Overview Section -->
+    <div class="content-section">
+        <h2 class="section-title">Overview</h2>
+        <p>Hostel life is an incredible journey that brings together students from diverse backgrounds. It offers a unique blend of independence, social interaction, and personal growth. In a hostel, you'll not only find a place to stay but also a community of peers who share the same experiences, challenges, and memories that last a lifetime.</p>
+    </div>
+
+    <!-- Gallery Section -->
+    <div class="content-section">
+        <h2 class="section-title">Gallery</h2>
+        <div class="gallery">
+            <img src="bh.jpg" alt="Boys Hostel">
+            <img src="b.hh.png" alt="Boys Hostel">
+            <img src="bhh.png" alt="Boys Hostel">
+        </div>
+
+        <h3 class="hostel-title" style="color: black;">Boys Hostel</h3>
+
+        <div class="gallery">
+            <img src="gh.jpg" alt="Girls Hostel">
+            <img src="gh.jpg" alt="Girls Hostel">
+            <img src="ghh.png" alt="Girls Hostel">
+        </div>
+
+        <h3 class="hostel-title" style="color: black;">Girls Hostel</h3>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="faq-section content-section">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <button onclick="toggleFAQ(1)">What is the admission process?</button>
+            <div>
+                <p>The admission process includes filling out an online form, followed by an interview and document verification. Please visit our admission page for more details.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button onclick="toggleFAQ(2)">What facilities are available in the hostel?</button>
+            <div>
+                <p>Our hostel offers a range of facilities including free Wi-Fi, 24/7 power backup, common rooms, and regular laundry service. We ensure comfort and safety for all our students.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button onclick="toggleFAQ(3)">How are the rooms assigned?</button>
+            <div>
+                <p>Room allocation is based on availability and student preferences. We aim to provide shared rooms with similar study interests and a comfortable living space for all.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button onclick="toggleFAQ(4)">Can parents visit the hostel?</button>
+            <div>
+                <p>Yes, parents are welcome to visit the hostel during visiting hours. We encourage communication between students and their families for their well-being.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonial Section -->
+    <div class="testimonial-container">
+        <h3>What Our Students Say</h3>
+
+        <div class="testimonial active">
+            <p style="color: black;">"The hostel life at Satya Sai Shiksha Sadan has been one of the most rewarding experiences of my life. I have grown so much, both academically and personally."</p>
+            <img src="1.jpg" alt="John Doe" class="testimonial-img">
+            <h5 style="color: black;">John Doe</h5>
+            <p style="color: black;">Grade 12</p>
+        </div>
+
+        <div class="testimonial">
+            <p style="color: black;">"The hostel life at Satya Sai Shiksha Sadan is like a family. The atmosphere is supportive and full of positivity."</p>
+            <img src="student2.jpg" alt="Jane Smith" class="testimonial-img">
+            <h5 style="color: black;">Jane Smith</h5>
+            <p style="color: black;">Grade 10</p>
+        </div>
+
+        <div class="testimonial">
+            <p style="color: black;">"I loved the vibrant environment and the chance to grow both academically and personally. The hostel was a great place to meet lifelong friends."</p>
+            <img src="student3.jpg" alt="Michael Johnson" class="testimonial-img">
+            <h5 style="color: black;">Michael Johnson</h5>
+            <p style="color: black;">Grade 11</p>
+        </div>
+
+        <div class="testimonial-nav">
+            <button class="prev" onclick="changeTestimonial(-1)">&#10094;</button>
+            <button class="next" onclick="changeTestimonial(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <!-- JavaScript for FAQ and Testimonial Interactivity -->
+    <script>
+        // Toggle FAQ Visibility
+        function toggleFAQ(id) {
+            let faqItem = document.getElementsByClassName('faq-item')[id - 1];
+            faqItem.classList.toggle('active');
+        }
+
+        // Testimonial Navigation
+        let currentTestimonialIndex = 0;
+        const testimonials = document.querySelectorAll('.testimonial');
+        
+        function changeTestimonial(direction) {
+            testimonials[currentTestimonialIndex].classList.remove('active');
+            currentTestimonialIndex = (currentTestimonialIndex + direction + testimonials.length) % testimonials.length;
+            testimonials[currentTestimonialIndex].classList.add('active');
+        }
+    </script>
+
+</body>
+</html>

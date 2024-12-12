@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Satya Sai Shiksha Sadan</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Basic Reset */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: white;
+            overflow-y: scroll; /* Ensures vertical scrolling */
+            padding-top: 80px; /* Space for the fixed header */
+        }
+
+        /* Header Styling */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+            width: 100%;
+            box-sizing: border-box;
+            z-index: 10;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        /* Common Image Style */
+        img {
+            width: 80px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* Quote Styling */
+        #quote {
+            color: white;
+            font-size: 18px;
+            text-align: center;
+            flex-grow: 1;
+            margin: 0 20px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        /* Navigation Styling */
+        #nav nav {
+            margin: 0 10px;
+        }
+
+        #nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        #nav a:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+        }
+
+        /* General Card Styles */
+        .card {
+            
+            border-radius: none;
+            
+            margin: 20px;
+            padding: 20px;
+            width: 300px;
+            transition: transform 0.2s;
+            background-color:rgb(241, 239, 239);
+            text-align: left;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            
+            width: 100%;
+        }
+
+        .card h2 {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        .card p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .card button {
+            align-items: end;
+            padding: 10px 20px;
+            background-color: #72b1f5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .card button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Admission Section */
+        .admission-section {
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 40px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 30px;
+            color: #555;
+            margin-top: 10px;
+        }
+
+        #hh {
+            font-size: 18px;
+            color: #807f7f;
+            margin-top: 10px;
+            line-height: 1.6;
+            max-width: 1000px;
+        }
+
+        .centered {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+        }
+
+        /* Why Choose Us Section */
+        #hs {
+            font-size: 32px;
+            color: #333;
+            text-align: center;
+            margin: 40px 0 20px;
+            padding: left;
+        }
+
+        .tt {
+            font-size: 18px;
+            color: #666;
+            list-style: decimal;
+            padding: 0;
+            margin: 0 0 20px;
+            text-align: center;
+            display: inline-block;
+        }
+
+        .tt li {
+            margin: 10px 0;
+        }
+
+        .tt li {
+            list-style: none;
+            font-size: 20px;
+            padding: 0 20px;
+            justify-content: flex-start;
+            border-radius: 10px;
+            
+        } 
+
+        /* Footer */
+        #footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Content Section */
+        .content-section {
+            margin-top: 120px; /* Added margin for space under the header */
+        }
+
+        /* Apply Now Button Styling */
+        #button {
+            color: rgb(80, 80, 209);
+            background-color: #00bcd4;
+        }
+
+        /* Responsive Adjustments */
+        .content-section {
+            width: 70%;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 0 200px;
+            justify-content: space-between;
+        }
+
+        .h2 {
+            color: rgb(246, 112, 112);
+            font-size: 30px;
+        }
+
+        .ccl {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #kimg {
+            width: 50%;
+            float: left;
+            padding: 0 80px;
+            margin: 0px 0px 15px 20px;
+        }
+
+        .pic-section {
+            margin-bottom: 20px;
+            
+            background-color: #6abad7;
+            border-radius: ;
+            display: flex;
+            margin-top: 20px;
+            width: 90%;
+        }
+
+        /* Customization for Mobile & Smaller Screens */
+        @media (max-width: 768px) {
+            .content-section {
+                width: 100%;
+                padding: 0 20px;
+            }
+
+            .card {
+                width: 100%;
+                margin: 10px 0;
+            }
+
+            #quote {
+                font-size: 16px;
+                text-align: left;
+                margin-left: 10px;
+            }
+
+            #footer {
+                font-size: 14px;
+            }
+        }
+      /* Show tooltip on hover */
+.tt li:hover ~ .tooltip {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s;
+}
+.why-item {
+    position: relative;
+}
+.why-item .tooltip {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    white-space: nowrap;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.why-choose-container {
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+.why-item:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+    z-index: 10;
+}
+
+/* Responsive adjustments */
+
+@media (max-width: 768px) {
+    #why-sssss-section ul {
+        max-width: 90%;
+    }
+
+    .tooltip {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: auto;
+        white-space: pre-wrap;
+    }
+}
+        /* .why-section {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            margin: 0 auto;
+            background-color: #f8f9fa;
+            padding: 40px 20px;
+            gap: 20px;
+        } */
+        .video-container,
+        .accordion-container {
+            flex: 1 1 48%;
+            max-width: 48%;
+        }
+        .accordion-container h1 {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .accordion-header {
+            background-color: #ffffff;
+            color: #333333;
+            border: none;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .accordion-body {
+            background-color: #f1f1f1;
+            padding: 15px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .accordion-header::after {
+            font-family: 'Font Awesome 5 Free';
+            content: '\f067'; /* Plus Icon */
+            font-weight: 900;
+        }
+        .accordion-header.collapsed::after {
+            content: '\f068'; /* Minus Icon */
+        }
+        @media (max-width: 768px) {
+            .video-container,
+            .accordion-container {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+        }
+        .custom-section {
+            margin-left: 185px;
+        display: flex;
+        gap: 20px;
+        padding: 40px;
+        background: linear-gradient(90deg, #dcdee1, #eaddad);
+        width: 75%;
+        box-sizing: border-box;
+        align-items: center;
+        flex-wrap: wrap;
+        border-radius: 5px;
+    }
+
+    .custom-section .video-container {
+        flex: 0 0 40%;
+        margin-left: 10vh;
+    }
+
+    .custom-section .video-container video {
+        width: 100%;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .custom-section .text-container {
+        flex: 1;
+        padding: 20px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .custom-section .text-container h1 {
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-align: left;
+    }
+
+    .custom-section .text-container .why-item {
+        border: 2px solid white;
+        padding: 15px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease-in-out;
+        background-color: rgba(255, 255, 255, 0.1);
+        cursor: pointer;
+    }
+
+    .custom-section .text-container .why-item:hover {
+        background-color: white;
+        color: #333;
+    }
+
+    .custom-section .text-container .why-item .title {
+        font-size: 18px;
+        font-weight: bold;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .custom-section .text-container .why-item .description {
+        font-size: 16px;
+        line-height: 1.5;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 90%;
+        color: #333;
+    }
+
+    .custom-section .text-container .why-item:hover .description {
+        opacity: 1;
+    }
+
+    .custom-section .text-container .why-item:hover .title {
+        opacity: 0;
+    }
+
+    @media (max-width: 768px) {
+        .custom-section {
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .custom-section .video-container {
+            flex: 1;
+            margin-left: 0;
+            width: 100%;
+        }
+
+        .custom-section .text-container {
+            flex: 1;
+            width: 100%;
+        }
+    }
+    .quote-section {
+        text-align: center;
+        width: 80%;
+        margin: 0 auto;
+        padding: 40px 20px;
+        background: linear-gradient(135deg, #82b62a, #b0de4c);
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        color: white;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .quote-section::before,
+    .quote-section::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 50%;
+        z-index: 1;
+        background: rgba(255, 255, 255, 0.1);
+        transform: rotate(15deg);
+        mix-blend-mode: overlay;
+    }
+
+    .quote-section::before {
+        left: -10%;
+    }
+
+    .quote-section::after {
+        right: -10%;
+    }
+
+    .quote-section h1 {
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        line-height: 1.5;
+        z-index: 2;
+        position: relative;
+        font-family: 'Georgia', serif;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .quote-section hr {
+        width: 50px;
+        height: 4px;
+        background-color: white;
+        border: none;
+        margin: 20px auto;
+        z-index: 2;
+        position: relative;
+    }
+
+    .quote-section h2 {
+        font-size: 24px;
+        font-weight: 400;
+        z-index: 2;
+        position: relative;
+        font-family: 'Arial', sans-serif;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .quote-section {
+            width: 90%;
+            padding: 20px;
+        }
+
+        .quote-section h1 {
+            font-size: 24px;
+        }
+
+        .quote-section h2 {
+            font-size: 18px;
+        }
+    }
+        
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="Home.html"><img src="download.jpg" alt="Logo" id="img1"></a>
+        <p id="quote">All action results from thought, so it is thoughts that matter. - Sai Baba</p>
+        <div id="nav">
+            <nav><a href="Home.html">Home</a></nav>
+            <nav><a href="About.html">About</a></nav>
+            <nav><a href="Contact.html">Contact</a></nav>
+            <nav><a href="Admission.html">Admission</a></nav>
+        </div>
+    </header>
+
+    <div class="admission-section">
+        <h1>Admission</h1>
+        <h2 class="h2">How to Apply</h2>
+        <p id="hh">
+            Find the academic programme that suits you, download all admissions-related materials, and apply online for all undergraduate, postgraduate, and professional programmes. Our application guide will help you successfully complete your application for admission to SSSSS. If you need further help, visit our FAQs or Contact Admissions pages.
+        </p>
+
+        <div class="centered">
+            <section class="ccl">
+                <article class="card" style="background: linear-gradient(90deg,rgb(240, 223, 185),rgb(217, 217, 217));">
+                    <img src="aa.jpg" alt="Application Guide">
+                    <h2>Application Guide</h2>
+                    <p>The step-by-step guide to apply to all SSSSS Admission programmes.</p>
+                    <a href="AdmissionGuide.html"><button>Learn More</button></a>
+                </article>
+
+                <article class="card" style="background: linear-gradient(90deg,rgb(240, 223, 185),rgb(217, 217, 217));">
+                    <img src="aad.png" alt="Programmes for Admission">
+                    <h2>Programmes for Admission</h2>
+                    <p>See the full list of programmes that are open for admissions to SSSSS.</p>
+                    <a href="programsforadmission.html"><button>Learn More</button></a>
+                </article>
+
+                <article class="card" style="background: linear-gradient(90deg,rgb(240, 223, 185),rgb(217, 217, 217));">
+                    <img src="ad.png" alt="Apply Online">
+                    <h2>Apply Online</h2>
+                    <p>Apply online for all SSSSS Admissions</p>
+                    <a href="Admission_form.html"><button>Learn More</button></a>
+                </article>
+            </section>
+        </div>
+        
+
+        <div class="centered">
+            
+            <section class="ccl">
+                <article class="card" style="background: linear-gradient(90deg,rgb(245, 221, 167),rgb(217, 217, 217));">
+                    
+                <h2>DATES & DEADLINES</h2>
+                    <p>See the important application dates and deadlines for Admissions to various SSSSS programmes.</p>
+                    <button>Learn More</button>
+                </article>
+
+                <article class="card"  style="background: linear-gradient(90deg,rgb(245, 221, 167),rgb(217, 217, 217));">
+                   
+                    <h2>ADMISSIONS DOWNLOADS</h2>
+                    <p>Download our Admissions prospectuses, Test & Interview Schedule, Model Test Papers and much more.</p>
+                  <button>Learn More</button>
+                </article>
+
+                <article class="card"  style="background: linear-gradient(90deg,rgb(245, 221, 167),rgb(217, 217, 217));">
+                   <h2>ADMISSIONS LISTS</h2>
+                    <p>This page will list the candidates selected for Admissions Tests as well as those admitted to various SSSSS programmes of study.</p>
+                    <button>Learn More</button>
+                </article>
+            </section>
+        </div>
+        <div>
+        
+            <div class="custom-section">
+                <!-- Video Section -->
+                <div class="video-container">
+                    <video controls style="margin-top: 7.5vh;">
+                        <source src="v.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            
+                <!-- Text Section -->
+                <div class="text-container">
+                    <h1 style="text-align: center;">Why SSSSS?</h1>
+                    <div class="why-item">
+                        <div class="title">Model of Integral Education</div>
+                        <div class="description">A balanced approach nurturing physical, mental, and spiritual growth.</div>
+                    </div>
+                    <div class="why-item">
+                        <div class="title">Excellent Facilities</div>
+                        <div class="description">State-of-the-art labs, libraries, and vibrant learning spaces.</div>
+                    </div>
+                    <div class="why-item">
+                        <div class="title">Academic Excellence</div>
+                        <div class="description">Consistently ranked among top institutions for world-class education.</div>
+                    </div>
+                    <div class="why-item">
+                        <div class="title">Holistic Development</div>
+                        <div class="description">Focus on character building, values, and overall development.</div>
+                    </div>
+                </div>
+            </div>
+
+        
+
+        <div>
+            <h1>Further Information</h1>
+
+        </div>
+        
+        <div>
+            <p style="font-size: 20px; margin-top: 0;">Our Admissions Policy, FAQs and ways to reach out to our admissions team.</p>
+        </div>
+
+        <div>
+            <div class="centered">
+                <section class="ccl" style="margin-left: 300px;">
+                    <article class="card" style="background: linear-gradient(90deg,rgb(240, 223, 185),rgb(217, 217, 217));">
+                        <img src="ap.png" alt="Application Policy">
+                        <h2>Application Policy</h2>
+                        <p>Sri Sathya Sai Shiksha Sadan has a merit-based admissions policy open for all.</p>
+                        <a href="AdmissionGuide.html"><button>Learn More</button></a>
+                    </article>
+    
+                    <article class="card" style="background: linear-gradient(90deg,rgb(240, 223, 185),rgb(217, 217, 217));">
+                        <img src="faqs.png" alt="Programmes for Admission" >
+                        <h2>FAQs</h2>
+                        <p>The list of most frequently asked questions we receive about applying to SSSSS.</p>
+                        <a href="programsforadmission.html"><button>Learn More</button></a>
+                    </article>
+    
+                    <article class="card" style="background: linear-gradient(90deg,rgb(240, 223, 185),rgb(217, 217, 217));">
+                        <img src="pc.png" alt="Apply Online">
+                        <h2>Admission Contact</h2>
+                        <p>For further assistance with admissions, please contact our Admissions team.</p>
+                        <a href="Admission_form.html"><button>Learn More</button></a>
+                    </article>
+                </section>
+            </div>
+
+        </div>
+    </div>
+
+
+<div style="width: 90%;margin-left: 210px;">
+    <section class="card-container">
+<article class="card" style="width: 80%;background:linear-gradient(9deg,rgb(238, 229, 187),rgb(173, 173, 173)) ;border-radius: 5px; max-width: 1">
+   
+    <h2 style="text-align: center;"> "Educare aligns the heart, head, and hands."</h2>
+    <hr style="width: 20%;background-color: rgb(180, 49, 49);border: none;height: 1px;">
+    <p style="text-align: center;color: rgb(154, 46, 46);" >-Sri Sathya Sai Baba</p>
+    
+</article>
+</section>
+</div>
+
+
+
+
+    
+
+    
+
+    
+</body>
+
+</html>

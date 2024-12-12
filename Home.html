@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Satya Sai Shiksha Sadan</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header img {
+            height: 60px;
+            width: auto;
+        }
+
+        #quote {
+            font-size: 1.2rem;
+            font-style: italic;
+            text-align: center;
+            flex-grow: 1;
+            margin-left: 20px;
+            color: #f7f7f7;
+        }
+
+        /* Navigation */
+        #nav ul {
+            list-style-type: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        #nav ul li {
+            position: relative;
+        }
+
+        #nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            padding: 10px;
+            display: block;
+            transition: color 0.3s ease;
+        }
+
+        #nav ul li a:hover {
+            color: #f7f7f7;
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #333;
+            border-radius: 5px;
+            padding: 10px 0;
+            box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .dropdown li {
+            padding: 0 10px;
+        }
+
+        .dropdown li a {
+            font-weight: normal;
+            color: #fff;
+        }
+
+        #nav ul li:hover .dropdown {
+            display: block;
+        }
+
+        /* Responsive Menu */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            #quote {
+                text-align: center;
+                margin-top: 15px;
+                font-size: 1rem;
+            }
+
+            #nav ul li {
+                width: 100%;
+                text-align: center;
+            }
+
+            .dropdown {
+                position: static;
+                width: 100%;
+            }
+
+            .dropdown li {
+                padding: 5px;
+                text-align: center;
+            }
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 100%;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <a href="Home.html"><img src="download.jpg" alt="Satya Sai Shiksha Sadan Logo" id="logo"></a>
+        <p id="quote">"All action results from thought, so it is thoughts that matter." - Sai Baba</p>
+        <div id="nav">
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="Admission.html">Admission</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+                <li>
+                    <a href="About.html">About</a>
+                    <ul class="dropdown">
+                       
+                        <li><a href="Academics.html">Academics</a></li>
+                        <li><a href="Events.html">Events and Achievements</a></li>
+                        <li><a href="Sports.html">Sports and Extracurricular Activities</a></li>
+                        <li><a href="Student.html">Student Life</a></li>
+                        <li><a href="Hostel.html">Hostel Life</a></li>
+                        <li><a href="Gallery.html">Photo and Video Gallery</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Main Image -->
+    <div class="container">
+        <img src="1.jpg" alt="School Image">
+    </div>
+
+</body>
+
+</html>

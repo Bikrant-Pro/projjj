@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student's Life</title>
+    <style>
+        body {
+        
+       
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color:rgb(218, 202, 202);
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        h1 {
+           
+            color: #333;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            background: #fff;
+            margin: 10px 0;
+            padding: 10px;
+            border-left: 5px solid #007BFF;
+        }
+        .section {
+            margin: 20px 0;
+        }
+
+
+        .cover-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background-image: url('2.jpg'); /* Replace with your cover image */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            filter: brightness(0.8); /* Darken the background for text contrast */
+        }
+        .cover-container h1 {
+            animation: fadeInText 3s forwards;
+            font-size: 3rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            opacity: 0;
+        }
+        @keyframes fadeInText {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        
+    </style>
+</head>
+<body>
+     
+    
+
+         <!-- Cover Page -->
+    <div class="cover-container">
+        <h1 style="color: white;font-size: 50px; ">Welcome to Student's Life</h1>
+    </div>
+        
+    <div class="container">
+        <div class="section daily-schedule">
+            <h1 style=" text-align: center;">Daily Schedule</h1>
+           
+            <ul>
+                <li>Wake Time (5 A.M)</li>
+                <li>Morning Bhajan Time (5:30-6:00 A.M)</li>
+                <li>Morning Playing Time (6:00-6:50 A.M)</li>
+                <li>Milk Time (6:55-7:00 A.M)</li>
+                <li>Supervised Study Time (7:00-8:15 A.M)</li>
+                <li>Breakfast Time (8:15-8:30 A.M)</li>
+                <li>School Time (9:00-11:55 A.M)</li>
+                <li>Lunch Time (11:55 A.M-12:30 P.M)</li>
+                <li>Continue to School (12:50-4:00 P.M)</li>
+                <li>Snacks Time (4:00-4:15 P.M)</li>
+                <li>Playing Time (4:15-5:30 P.M)</li>
+                <li>Evening Bhajan Time (5:55-6:30 P.M)</li>
+                <li>Dinner Time (6:30-7:00 P.M)</li>
+                <li>Supervised Study Time (7:00-8:30 P.M)</li>
+                <li>Milk Time (8:30-8:40 P.M)</li>
+                <li>Self Study Time (9:00-10:00 P.M)</li>
+                <li>Light's Off Time(10:30)</li>
+            </ul>
+        </div>
+
+        <div class="section student-club">
+            <h1 style=" text-align: center;">Student Club</h1>
+            <ul>
+                <li>Book Club</li>
+                <p>
+                    <h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 20px;">
+                        Anand Pandit(Chairman of Book Club)
+                    </h1>
+                    <h2></h2>
+                </p>
+
+                <li>Bal Club</li>
+                <p>
+                    <h1 style="color: rgb(235, 76, 76);font-size: 20px;">Currently unavailable!</h1>
+                </p>
+            </ul>
+        </div>
+
+        <div class="section student-achievements">
+            <h1 style=" text-align: center;">Student Achievements</h1>
+            <ul>
+                <li> Sports Achievement </li>
+                <img src="A.jpg" alt="image" style=" width: 100%; border-radius: 10px;">
+                <li>Amar Cup Runner</li>
+                
+                <img src="zb.jpg" alt="image" style="width: 100%; border-radius: 10px;">
+                <li>Basketball Winner</li>
+                <img src="z.jpg" alt="image" style="width: 100%; border-radius: 10px;">
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

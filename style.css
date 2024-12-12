@@ -1,0 +1,323 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+    
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 10;
+    position: relative;
+}
+
+#img1 {
+    width: 80px;
+    height: auto;
+    border-radius: 8px;
+}
+
+#quote {
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    flex-grow: 1;
+    margin: 0 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#nav {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+}
+
+ul {
+    list-style: none;
+    background-color: #08080890;
+
+}
+/*this is css of form */
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Body content should be scrollable if needed */
+body {
+    overflow-y: auto;
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+
+/* Form section styles */
+.form-section {
+    max-width: 800px;
+    margin: 30px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-out;
+    overflow-y: auto;  /* Enable scrolling if the content is too large */
+    max-height: 80vh; /* Ensure that the form does not exceed 80% of the viewport height */
+}
+
+/* Adjust the rest of the styling as needed... (no changes) */
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #004d99;
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus {
+    border-color: #004d99;
+    outline: none;
+}
+
+.input-group input[type="radio"] {
+    width: auto;
+}
+
+.registerbtn {
+    background-color: #004d99;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    font-size: 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.registerbtn:hover {
+    background-color: #ffcc00;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* If you have other form sections, like contactForm (as seen in your code), make sure they have proper styles too */
+.contactForm .inputBox input,
+.contactForm .inputBox textarea {
+    width: 100%;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 2px solid #333;
+    outline: none;
+    resize: none;
+}
+
+.contactForm .inputBox span {
+    position: absolute;
+    left: 0;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    pointer-events: none;
+    transition: 0.5s;
+    color: #666;
+}
+
+.contactForm .inputBox input:focus~span,
+.contactForm .inputBox input:valid~span,
+.contactForm .inputBox textarea:focus~span,
+.contactForm .inputBox textarea:valid~span {
+    color: #e91e63;
+    font-size: 12px;
+    transform: translateY(-20px);
+}
+
+.contactForm .inputBox input[type="submit"] {
+    width: 100px;
+    background: #00bcd4;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+}
+
+/*css of the about section */
+#ss{
+    font-size: 30px;
+    text-align: center;
+    color: blue;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#ppp{
+    font-size: 20px;
+}
+#rfc input[type="button"] {
+    background-color: rgba(0, 128, 255, 0.7); /* Blue background */
+    color: white; /* White text color */
+    font-size: 16px; /* Adjust the font size */
+    padding: 10px 20px; /* Spacing inside the button */
+    border: none; /* Remove any borders */
+    border-radius: 5px; /* Add smooth rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effects */
+}
+
+#rfc input[type="button"]:hover {
+    background-color: rgba(16, 235, 89, 0.7); /* Change to greenish color on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+
+.readmorebtn{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+
+}
+#rfc {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    box-sizing: border-box;
+    gap: 20px; /* Add spacing between the text and the image */
+}
+
+#rfc img {
+    height: 250px; /* Set a fixed height for the image */
+    width: auto; /* Maintain the aspect ratio */
+    border-radius: 10px; /* Apply rounded corners */
+    object-fit: cover; /* Ensure the image fills its container properly */
+    flex-shrink: 0; /* Prevent the image from shrinking */
+    margin-left: 10px; /* Slightly adjust the image's position */
+    margin-right: 25vh;
+}
+
+
+
+#rfc h2 {
+    margin-left: 20px;
+    flex: 1; /* Allow the header to adjust its size */
+}
+
+#rfc p {
+    margin-left: 20px;
+    font-size: 18px;
+    flex: 2; /* Allow more space for the paragraph */
+}
+
+
+
+#edu{
+    padding-top: 10vh;
+    text-align: center;
+}
+#edu p{
+    font-size: 18px;
+}
+.cards {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 0; /* Remove extra margin to keep cards closer */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and shadow */
+    width: 250px; /* Medium size for the cards */
+    margin-bottom: 20px; /* Ensure some spacing at the bottom of the container */
+}
+
+.cards:hover {
+    transform: translateY(-5px); /* Slight lift effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow effect */
+}
+.cards-image {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    max-height: 250px; /* Set a maximum height to prevent large images */
+    object-fit: cover; /* Ensure the image fills the area properly */
+}
+
+.cards-title {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.cards-description {
+    font-size: 1rem;
+    color: #555;
+    text-align: center;
+}
+
+.cards-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.cards-button:hover {
+    background-color: #0056b3;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center; /* Center the cards container */
+    align-items: center;
+    gap: 10px; /* Minimal gap between cards */
+    flex-wrap: wrap; /* Allow cards to wrap to the next line if needed */
+}
+#kki{
+    width: 150vh;
+    height: 15vh;
+    margin-left: 20vh;
+}/* 
+This is the end of About Us page */
+
+

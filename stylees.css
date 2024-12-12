@@ -1,0 +1,55 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Navigation menu styles */
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+    display: flex;
+  }
+  
+  nav ul li {
+    position: relative;
+  }
+  
+  nav ul li a {
+    display: block;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+  }
+  
+  nav ul li a:hover {
+    background-color: #555;
+  }
+  
+  /* Dropdown menu styles */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #555;
+  }
+  
+  /* Show the dropdown when hovering over the About link */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
